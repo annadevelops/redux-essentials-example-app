@@ -1,30 +1,24 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Redirect,
+  Routes
 } from 'react-router-dom'
 
 import { Navbar } from './app/Navbar'
+import { PostsList } from './features/posts/PostsList'
 
 function App() {
   return (
     <Router>
       <Navbar />
       <div className="App">
-        <Switch>
+        <Routes>
           <Route
-            exact
             path="/"
-            render={() => (
-              <section>
-                <h2>Welcome to the Redux Essentials example app!</h2>
-              </section>
-            )}
+            element={<PostsList/>}
           />
-          <Redirect to="/" />
-        </Switch>
+        </Routes>
       </div>
     </Router>
   )
