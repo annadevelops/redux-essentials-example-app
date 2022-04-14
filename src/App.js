@@ -16,11 +16,11 @@ function App() {
     <Router>
       <Navbar />
       <div className="App">
-        <AddPostForm />
+    
         <Routes>
           <Route
             path="/"
-            element={<PostsList/>}
+            element={<><AddPostForm /><PostsList/></>}
           />
           <Route path="/posts/:postId" element={<SinglePostPage />} />
           <Route path="/posts/edit/:postId" element={<EditPostForm />} />
